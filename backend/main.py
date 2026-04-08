@@ -37,7 +37,7 @@
 # # Include API routes
 # # ---------------------------
 # app.include_router(auth_routes.router)
-# app.include_router(protected_routes.router)
+# app.insclude_router(protected_routes.router)
 
 
 # # ---------------------------
