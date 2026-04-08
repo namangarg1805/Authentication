@@ -77,12 +77,12 @@ def callback(code: str):
 
     response = RedirectResponse(url=FRONTEND_URL)
 
-    # Access token cookie
+    # cookie
     response.set_cookie(
         key="access_token",
         value=access_token,
         httponly=True,
-        secure=False,  # True in production (HTTPS)
+        secure=False,  
         samesite="lax"
     )
 

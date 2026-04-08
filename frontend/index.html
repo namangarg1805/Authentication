@@ -28,7 +28,7 @@ function getTokenFromURL() {
     // Store token (optional)
     localStorage.setItem("token", token);
 
-    document.getElementById("status").innerText = "✅ Logged in";
+    document.getElementById("status").innerText = "Logged in";
 
     // Clean URL
     window.history.replaceState({}, document.title, "/");
@@ -42,7 +42,7 @@ function loadToken() {
   const saved = localStorage.getItem("token");
   if (saved) {
     accessToken = saved;
-    document.getElementById("status").innerText = "✅ Logged in (saved)";
+    document.getElementById("status").innerText = "Logged in (saved)";
   }
 }
 
@@ -105,7 +105,7 @@ function login() {
 
 async function callAPI() {
   const res = await fetch("http://localhost:8000/protected", {
-    credentials: "include" // 🔥 send cookies
+    credentials: "include" // send cookies
   });
 
   const data = await res.json();

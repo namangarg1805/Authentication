@@ -64,7 +64,7 @@
 #             key,
 #             algorithms=["RS256"],
 #             options={
-#                 "verify_aud": False   # 👈 disable audience check
+#                 "verify_aud": False   #
 #             }
 #         )
 
@@ -83,6 +83,6 @@
 #     user = verify_token(token)
 
 #     return {
-#         "message": "✅ Access granted",
+#         "message": "Access granted",
 #         "user": user
 #     }
