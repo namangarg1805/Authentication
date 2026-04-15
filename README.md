@@ -31,18 +31,25 @@ Users are redirected to Keycloak for login, and after successful authentication,
 * **Requests / HTTPX**
 
 ---
-
 ## 📂 Project Structure
-
-```bash
-project/
-│── main.py              # FastAPI app
-│── auth.py              # Login / callback logic
+AUTHENTICATION_PROJECT/
+│── .venv/
 │── requirements.txt
-│── README.md
+│
+│── backend/
+│   │── main.py                  # FastAPI entry point
+│   │── config.py               # Keycloak / app settings
+│   │── auth.py                 # Auth helper functions
+│   │── dependencies.py         # JWT / current user dependencies
+│   │
+│   ├── routes/
+│   │   ├── auth_routes.py      # Login / callback / logout routes
+│   │   └── protected_routes.py # Protected APIs
+│
+│── frontend/
+│   └── index.html             # Frontend login page
 ```
 
----
 
 ## 🔄 Authentication Flow
 
