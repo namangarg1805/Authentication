@@ -88,15 +88,6 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-
-### 4. Start FastAPI Server
-
-```bash
-uvicorn backend.main:app --reload
-```
-
----
-
 ## ⚙️ Configure Keycloak
 
 Update these values in your code:
@@ -108,7 +99,18 @@ CLIENT_ID=
 CLIENT_SECRET=
 REDIRECT_URI=
 ```
+### 4. Start Keycloak
+docker run -d --name keycloak `
+-p 8080:8080 `
+-e KEYCLOAK_ADMIN=admin `
+-e KEYCLOAK_ADMIN_PASSWORD=admin `
+quay.io/keycloak/keycloak:latest start-dev
 
+### 5. Start FastAPI Server
+
+```bash
+uvicorn backend.main:app --reload
+```
 ---
 
 ## 🔐 Sample Endpoints
