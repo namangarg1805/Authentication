@@ -65,8 +65,6 @@ AUTHENTICATION_PROJECT/
 6. Access token used for protected routes
 7. ID token contains user identity details
 
----
-
 ## ▶️ Run Locally
 
 ### 1. Clone Repository
@@ -100,11 +98,13 @@ CLIENT_SECRET=
 REDIRECT_URI=
 ```
 ### 4. Start Keycloak
-docker run -d --name keycloak `
--p 8080:8080 `
--e KEYCLOAK_ADMIN=admin `
--e KEYCLOAK_ADMIN_PASSWORD=admin `
+
+```docker run -d --name keycloak 
+-p 8080:8080 
+-e KEYCLOAK_ADMIN=admin 
+-e KEYCLOAK_ADMIN_PASSWORD=admin 
 quay.io/keycloak/keycloak:latest start-dev
+```
 
 ### 5. Start FastAPI Server
 
